@@ -32,7 +32,7 @@ task_db = [
 ]
 
 
-@app.get("/apiv1/tasks/{task_id}", dependencies=[Depends(verify_api_key)])
+@app.get("/apiv1/tasks/{task_id}", 
 def read_task_v1(task_id: int):
     for task in task_db:
         if task["task_id"] == task_id:
